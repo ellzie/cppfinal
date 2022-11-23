@@ -1,5 +1,6 @@
 #include <iostream>
-#include "Agent.h"
+#include "AgentJason.h"
+#include <list>
 using namespace std;
 
 // maybe we should put all changes at the top for comments and ish
@@ -13,9 +14,10 @@ int main(){
 
     //creating objects
 
-    struct listingDetails l1;
+    struct listingDetails listedProperties[5];
+    listedProperties[0].sellingPrice = 9;
     Agent a1;
-    a1.recordOffer(l1);
+    a1.recordOffer(listedProperties[0]);
     cout << a1.getSellingPrice() << endl;
     system("pause");
     return 0;
