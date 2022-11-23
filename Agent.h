@@ -18,7 +18,7 @@ class Agent{
     private:
         Seller* contactedSeller;
         Buyer* contactedBuyer;
-        list<listingDetails*> *listing = new list<listingDetails*>;
+        list<listingDetails*> *listing;
     public:
         void recordOffer();
         void contactSeller();
