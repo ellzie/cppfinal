@@ -5,6 +5,10 @@
 #include <string>
 #include <list>
 
+// passing two args through contactSeller
+//  -contactedSeller to send information to and store
+//  -templist details for info to store to seller
+
 using namespace std;
 
 struct listingDetails{
@@ -18,22 +22,17 @@ class Agent{
     private:
         Seller* contactedSeller;
         Buyer* contactedBuyer;
-        //list<listingDetails*> *listing = new list<listingDetails*>;
-        // removed line for new list variable probably(?)
         listingDetails tempList;
 
-        //adding temporary variables to test agent cpp file
         double sellingPrice;
         string date;
         bool soldStatus;
     public:
         void recordOffer(listingDetails tempList);
-        void contactSeller();
+        //void contactSeller(Seller *contactedSeller, listingDetails tempList);
         void modifyListing(listingDetails tempList);
         double getSellingPrice();
-        //passed listing through function
-
-        //created getSellingPrice function()
+        friend Seller contactSeller(Seller *contactedSeller, listingDetails tempList);
 };
 
 #endif

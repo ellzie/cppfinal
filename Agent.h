@@ -18,14 +18,7 @@ class Agent{
     private:
         Seller* contactedSeller;
         Buyer* contactedBuyer;
-        //list<listingDetails*> *listing = new list<listingDetails*>;
-        // removed line for new list variable probably(?)
-        listingDetails tempList;
-
-        //adding temporary variables to test agent cpp file
-        double sellingPrice;
-        string date;
-        bool soldStatus;
+        list<listingDetails*> *listing = list<listingDetails*>;
     public:
         void recordOffer(listingDetails tempList);
         void contactSeller();

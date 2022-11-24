@@ -1,4 +1,4 @@
-#ifndef SELLER_H
+ #ifndef SELLER_H
 #define SELLER_H
 #include "Property.h"
 using namespace std;
