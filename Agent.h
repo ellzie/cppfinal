@@ -18,10 +18,10 @@ class Agent{
     private:
         Seller* contactedSeller;
         Buyer* contactedBuyer;
-        list<listingDetails*> *listing = list<listingDetails*>;
+        list<listingDetails*> *listing;
     public:
         void recordOffer(listingDetails tempList);
-        void contactSeller();
+        void contactSeller(Seller *contactedSeller, listingDetails tempList);
         void modifyListing(listingDetails tempList);
         double getSellingPrice();
         //passed listing through function

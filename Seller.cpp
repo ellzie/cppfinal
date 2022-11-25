@@ -3,7 +3,7 @@
 
 using namespace std;
  
-void Seller::Seller(Property* ownedProperty)
+Seller::Seller(Property* ownedProperty)
 {
     ownedProperty->getType();
 }

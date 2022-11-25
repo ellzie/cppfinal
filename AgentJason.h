@@ -29,7 +29,7 @@ class Agent{
         bool soldStatus;
     public:
         void recordOffer(listingDetails tempList);
-        //void contactSeller(Seller *contactedSeller, listingDetails tempList);
+        void contactSeller(Seller *contactedSeller, listingDetails tempList);
         void modifyListing(listingDetails tempList);
         double getSellingPrice();
         friend Seller contactSeller(Seller *contactedSeller, listingDetails tempList);
