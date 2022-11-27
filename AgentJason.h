@@ -13,7 +13,7 @@ using namespace std;
 
 struct listingDetails{
     Property* ownedProperty;
-    double sellingPrice = 3;
+    double sellingPrice;
     string date;
     bool soldStatus;
 };
@@ -23,11 +23,12 @@ class Agent{
         Seller* contactedSeller;
         Buyer* contactedBuyer;
         listingDetails tempList;
-
+        // what are these for
         double sellingPrice;
         string date;
         bool soldStatus;
     public:
+        Agent(Seller* contactedSeller,Buyer* contactedBuyer, listingDetails tempList);
         void recordOffer(listingDetails tempList);
         void contactSeller(Seller *contactedSeller, listingDetails tempList);
         void modifyListing(listingDetails tempList);
