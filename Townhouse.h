@@ -11,6 +11,7 @@ class Townhouse : public Property
         bool backyard;
 
     public:
+        Townhouse(bool backyard, string type, string date, string address, int lotNum, int bedNum, double bathNum);
         bool getBackyard();
 };
 

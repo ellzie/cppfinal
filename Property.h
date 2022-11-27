@@ -6,13 +6,13 @@ using namespace std;
 
 class Property
 {
-    private:
+    protected:
         string type;
         string date;
         string address;
         int lotNum;
         int bedNum;
-        int bathNum;
+        double bathNum;
 
     public:
         string getType();
