@@ -9,7 +9,7 @@ using namespace std;
 
 struct listingDetails{
     Property* ownedProperty;
-    double sellingPrice = 3;
+    double sellingPrice;
     string date;
     bool soldStatus;
 };
@@ -18,15 +18,15 @@ class Agent{
     private:
         Seller* contactedSeller;
         Buyer* contactedBuyer;
-        list<listingDetails*> *listing;
+        //list<listingDetails*> *listing;
+        listingDetails listOfProperties;
+        string name;
     public:
-        void recordOffer(listingDetails tempList);
-        void contactSeller(Seller *contactedSeller, listingDetails tempList);
-        void modifyListing(listingDetails tempList);
-        double getSellingPrice();
-        //passed listing through function
-
-        //created getSellingPrice function()
+        Agent(string name,  Seller* contactedSeller,  Buyer* contactedBuyer, listingDetails listOfProperties);
+        void recordOffer(listingDetails listOfProperties);
+        void contactSeller(Seller *contactedSeller, listingDetails listOfProperties);
+        void modifyListing(listingDetails listOfProperties);
+        // deleted getSellingPrice function
 };
 
 #endif

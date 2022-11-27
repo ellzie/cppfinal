@@ -1,5 +1,5 @@
 #include <iostream>
-#include "AgentJason.h"
+//#include "AgentJason.h"
 #include "Condo.h"
 #include "Seller.h"
 #include "Agent.h"
@@ -7,7 +7,7 @@
 #include <list>
 using namespace std;
 
-// 
+// will define agent soon. setting up all the listing stuff and creating objects
 
 
 // Link for collaboration
@@ -28,6 +28,7 @@ int main(){
     // atleast 2 sellers to prompt, 3rd seller gets uhh, nothing!
 
     //Agent a1;
+    //Agent a1("tom", s1, b1, listedProperties);
 
     // Maybe this can be a function under agent?
     listedProperties[0].ownedProperty = &c1;

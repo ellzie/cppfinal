@@ -7,3 +7,8 @@ Seller::Seller(Property* ownedProperty)
 {
     ownedProperty->getType();
 }
+
+bool Seller::respondOffer()
+{
+    return true;
+}

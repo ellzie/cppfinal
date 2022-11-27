@@ -9,7 +9,7 @@ class Seller{
     public:
         Seller(Property* ownedProperty);
         void contactAgent();
-        void respondOffer();
+        bool respondOffer();
 };
 
 #endif
