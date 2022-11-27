@@ -35,15 +35,20 @@ int main(){
     listedProperties[0].date = "3/21/2020";
     listedProperties[0].soldStatus = false;
     
+    listedProperties[1].ownedProperty = &c2;
+    listedProperties[1].sellingPrice = 450'000;
+    listedProperties[1].date = "7/01/2019";
+    listedProperties[1].soldStatus = false;
+
     // this is kind of what I want the Show Listing thing to look like
-    for (int i = 0; i < 1; i++){
+    for (int i = 0; i < 2; i++){
         cout << listedProperties[i].ownedProperty->getType() << endl;
         cout << listedProperties[i].sellingPrice << endl;
         cout << listedProperties[i].date << endl;
-        string forSaleResult = listedProperties[i].soldStatus ? "Sold!" : "For Sale"; // Ternary Operator
-        cout << forSaleResult << endl;                                              // condition ? ifTrue : ifFalse
-    }                                                                               // pretty neat
-
+        string forSaleResult = listedProperties[i].soldStatus ? "Sold!" : "For Sale";
+        cout << forSaleResult << endl;
+        cout << endl;
+    }
     //listedProperties[0].sellingPrice = 9;
     
     //a1.recordOffer(listedProperties[0]);
