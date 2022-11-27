@@ -2,7 +2,13 @@
 #include <iostream>
 
 using namespace std;
- 
+
+Agent::Agent(Seller* contactedSeller,Buyer* contactedBuyer, listingDetails tempList){
+    this->contactedSeller = contactedSeller;
+    this->contactedBuyer = contactedBuyer;
+    this->tempList = tempList;
+}
+
 void Agent::recordOffer(listingDetails list)
 {
     sellingPrice = list.sellingPrice;
