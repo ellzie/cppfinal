@@ -13,11 +13,11 @@ struct listingDetails{
     string date;
     bool soldStatus;
 };
-
+// mostly just changed declarations here
 class Agent{
     private:
-        Seller* contactedSeller;
-        Buyer* contactedBuyer;
+        Seller* contactedSellers[100];
+        Buyer* contactedBuyers[100];
         //list<listingDetails*> *listing;
         listingDetails listOfProperties;
         string name;
@@ -25,9 +25,9 @@ class Agent{
         listingDetails listedProperties[100];
         int count = 0;
     public:
-        Agent(string name,  Seller* contactedSeller,  Buyer* contactedBuyer);
+        Agent(string name,  Seller* contactedSellers[],  Buyer* contactedBuyers[]);
         void recordOffer(listingDetails listOfProperties);
-        void contactSeller(Seller *contactedSeller, listingDetails listOfProperties);
+        void contactSeller(int sellerNum, int listingNum);
         //pass a property in and can add to list, along with all listing details
         void modifyListing(Property* p1, int sPrice, string date, bool status);
         void printList();

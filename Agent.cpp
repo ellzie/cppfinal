@@ -3,10 +3,15 @@
 
 using namespace std;
 
-Agent::Agent(string name, Seller* contactedSeller, Buyer* contactedBuyer){
-    this->contactedSeller = contactedSeller;
-    this->contactedBuyer = contactedBuyer;
+Agent::Agent(string name, Seller* contactedSellers[], Buyer* contactedBuyers[]){
     this->name = name;
+    // assigning the list
+    for (int i = 0; i < 3; i++){
+        this->contactedSellers[i] = contactedSellers[i];
+    }
+    for (int i = 0; i < 2; i++){
+        this->contactedBuyers[i] = contactedBuyers[i];
+    }
 }
 
 void Agent::recordOffer(listingDetails tempList)
@@ -17,9 +22,10 @@ void Agent::recordOffer(listingDetails tempList)
     this->listOfProperties.soldStatus = tempList.soldStatus;
 }
 
-void Agent::contactSeller(Seller *contactedSeller, listingDetails tempList)
-{
-    contactedSeller->respondOffer();
+void Agent::contactSeller(int sellerNum, int listingNum)
+{ // the additions to the function allow the agent to choose which seller to contact about which house with the offer
+    bool sellerDecision = contactedSellers[sellerNum]->respondOffer(listedProperties[listingNum].sellingPrice, listedProperties[listingNum].ownedProperty);
+    listedProperties[listingNum].soldStatus = sellerDecision;
 }
 
 void Agent::modifyListing(Property* p1, int sPrice, string date, bool status)

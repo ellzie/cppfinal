@@ -18,29 +18,34 @@ int main(){
     struct listingDetails listedProperties[5];
     Condo c1(300,"Condo","1/1/1970","123 Easy Street",221,2,1); // first condo
     Condo c2(500,"Condo","8/7/1986","1 Long Avenue",371,2,1.5); // second condo
-    Townhouse h1(true,"TownHouse","3/23/2013","31 Moon Road",65,3,2); // first townhouse
-    Seller s1(&c1);
-    Seller s2(&c2);
-    Seller s3(&h1);
+    Townhouse h1(true,"Town House","3/23/2013","31 Moon Road",65,3,2); // first townhouse
+    Seller s1(&c1); // sells the first condo (will not get an offer, too expensive for the area)
+    Seller s2(&c2); // sells the second condo 
+    Seller s3(&h1); // sells the town house
     Buyer b1;
-    // how do we define agent, do we have multiple or just one managing multiple sellers
-    // how many sellers?
-    
-    // atleast 2 sellers to prompt, 3rd seller gets uhh, nothing!
-
-    // Assigning AGENT PERRY *agent p!!!!!!* to deal with property condo 1
-    // and so on and so forth with another agent
-    Agent a1("Perry", &s1, &b1);
-    //Agent a2("tom", &s1, &b1);
-    //Agent a3("tom", &s1, &b1);
+    Buyer b2;
+    // Assigning AGENT PERRY *agent p!!!!!!* to deal with *all the properties
+    // cause hes the goat, well the platypus i guess
+    Seller *listOfSellers[2];
+    listOfSellers[0] = &s1;
+    listOfSellers[1] = &s2;
+    listOfSellers[2] = &s3;
+    Buyer *listOfBuyers[1];
+    listOfBuyers[0] = &b1;
+    listOfBuyers[1] = &b2;
+    Agent a1("Perry", listOfSellers, listOfBuyers);
 
     // adding properties to the master list. ignore above this is the new way.
     a1.modifyListing(&c1, 300'000, "3/21/2020", false);
     a1.modifyListing(&c2, 450'000, "7/01/2019", false);
     a1.modifyListing(&h1, 88'000, "1/11/2019", false);
 
-    a1.printList();
+    a1.printList(); // Original List
 
+    a1.contactSeller(1,1); // Buy the 2nd Condo
+    a1.contactSeller(2,2); // Buy the Town House
+    a1.printList(); // New List with both bought
+    
     system("pause");
     return 0;
 }
