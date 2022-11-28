@@ -8,6 +8,7 @@
 using namespace std;
 
 // will define agent soon. setting up all the listing stuff and creating objects
+    // oh yeah agent is defined. so is a masterlist that only agent can control
 
 
 // Link for collaboration
@@ -27,34 +28,18 @@ int main(){
     
     // atleast 2 sellers to prompt, 3rd seller gets uhh, nothing!
 
-    //Agent a1;
-    //Agent a1("tom", s1, b1, listedProperties);
+    // Assigning AGENT PERRY *agent p!!!!!!* to deal with property condo 1
+    // and so on and so forth with another agent
+    Agent a1("Perry", &s1, &b1);
+    //Agent a2("tom", &s1, &b1);
+    //Agent a3("tom", &s1, &b1);
 
-    // Maybe this can be a function under agent?
-    listedProperties[0].ownedProperty = &c1;
-    listedProperties[0].sellingPrice = 300'000;
-    listedProperties[0].date = "3/21/2020";
-    listedProperties[0].soldStatus = false;
-    
-    listedProperties[1].ownedProperty = &c2;
-    listedProperties[1].sellingPrice = 450'000;
-    listedProperties[1].date = "7/01/2019";
-    listedProperties[1].soldStatus = false;
+    // adding properties to the master list. ignore above this is the new way.
+    a1.modifyListing(&c1, 300'000, "3/21/2020", false);
+    a1.modifyListing(&c2, 450'000, "7/01/2019", false);
+    a1.modifyListing(&h1, 88'000, "1/11/2019", false);
 
-    // this is kind of what I want the Show Listing thing to look like
-    for (int i = 0; i < 2; i++){
-        cout << listedProperties[i].ownedProperty->getType() << endl;
-        cout << listedProperties[i].sellingPrice << endl;
-        cout << listedProperties[i].date << endl;
-        string forSaleResult = listedProperties[i].soldStatus ? "Sold!" : "For Sale";
-        cout << forSaleResult << endl;
-        cout << endl;
-    }
-    //listedProperties[0].sellingPrice = 9;
-    
-    //a1.recordOffer(listedProperties[0]);
-    //cout << a1.getSellingPrice() << endl;
-
+    a1.printList();
 
     system("pause");
     return 0;
