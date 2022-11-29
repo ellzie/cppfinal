@@ -5,8 +5,9 @@
 using namespace std;
  
 Seller::Seller(Property* ownedProperty)
-{ // what is this for?
+{ 
     ownedProperty->getType();
+    // this just gets property type and the seller is connected to that property
 }
 
 bool Seller::respondOffer(double price, Property* ownedPropertyFromAgent)

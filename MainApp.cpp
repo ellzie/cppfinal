@@ -7,8 +7,7 @@
 #include <list>
 using namespace std;
 
-// will define agent soon. setting up all the listing stuff and creating objects
-    // oh yeah agent is defined. so is a masterlist that only agent can control
+// 
 
 
 // Link for collaboration
@@ -35,7 +34,6 @@ int main(){
     listOfBuyers[1] = &b2;
     Agent a1("Perry", listOfSellers, listOfBuyers);
 
-    // adding properties to the master list. ignore above this is the new way.
     a1.modifyListing(&c1, 300'000, "3/21/2020", false);
     a1.modifyListing(&c2, 450'000, "7/01/2019", false);
     a1.modifyListing(&h1, 88'000, "1/11/2019", false);
