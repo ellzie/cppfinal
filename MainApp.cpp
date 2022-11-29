@@ -1,9 +1,9 @@
 #include <iostream>
 //#include "AgentJason.h"
 #include "Condo.h"
-#include "Seller.h"
+//#include "Seller.h"
 #include "Agent.h"
-#include "Buyer.h"
+//#include "Buyer.h"
 #include "Townhouse.h"
 #include <list>
 using namespace std;
@@ -45,8 +45,8 @@ int main(){
     a1.contactSeller(2,88'000); // Buy the Town House
     a1.printList(); // New List with both bought
     
-    b1.makeOffer(a1,1,425'000);
-    b2.makeOffer(a1,2,88'000);
+    //b1.makeOffer(a1,1,425'000);
+    //b2.makeOffer(a1,2,88'000);
     system("pause");
     return 0;
 }

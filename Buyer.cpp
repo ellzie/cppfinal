@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void Buyer::consultListing(Agent a1, listingDetails list[], int listNum)
+void Buyer::consultListing(Agent* a1, listingDetails list[], int listNum)
 {
     cout << list[listNum].ownedProperty->getType() << endl;
     cout << list[listNum].sellingPrice << endl;
@@ -13,7 +13,7 @@ void Buyer::consultListing(Agent a1, listingDetails list[], int listNum)
     cout << endl;
 }
 
-void Buyer::makeOffer(Agent a1, int listNum, double price)
+void Buyer::makeOffer(Agent* a1, int listNum, double price)
 {
-    a1.contactSeller(listNum, price);
+    a1->contactSeller(listNum, price);
 }

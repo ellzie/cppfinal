@@ -13,6 +13,7 @@ struct listingDetails{
     string date;
     bool soldStatus;
 };
+class Buyer;
 // mostly just changed declarations here
 class Agent{
     private:
