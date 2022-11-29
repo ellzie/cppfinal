@@ -3,6 +3,7 @@
 #include "Condo.h"
 #include "Seller.h"
 #include "Agent.h"
+#include "Buyer.h"
 #include "Townhouse.h"
 #include <list>
 using namespace std;
@@ -40,10 +41,12 @@ int main(){
 
     a1.printList(); // Original List
 
-    a1.contactSeller(1,1); // Buy the 2nd Condo
-    a1.contactSeller(2,2); // Buy the Town House
+    a1.contactSeller(1,425'000); // Buy the 2nd Condo
+    a1.contactSeller(2,88'000); // Buy the Town House
     a1.printList(); // New List with both bought
     
+    b1.makeOffer(a1,1,425'000);
+    b2.makeOffer(a1,2,88'000);
     system("pause");
     return 0;
 }

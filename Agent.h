@@ -27,7 +27,7 @@ class Agent{
     public:
         Agent(string name,  Seller* contactedSellers[],  Buyer* contactedBuyers[]);
         void recordOffer(listingDetails listOfProperties);
-        void contactSeller(int sellerNum, int listingNum);
+        void contactSeller(int listingNum, double price);
         //pass a property in and can add to list, along with all listing details
         void modifyListing(Property* p1, int sPrice, string date, bool status);
         void printList();

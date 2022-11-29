@@ -22,9 +22,9 @@ void Agent::recordOffer(listingDetails tempList)
     this->listOfProperties.soldStatus = tempList.soldStatus;
 }
 
-void Agent::contactSeller(int sellerNum, int listingNum)
+void Agent::contactSeller(int listingNum, double price)
 { // the additions to the function allow the agent to choose which seller to contact about which house with the offer
-    bool sellerDecision = contactedSellers[sellerNum]->respondOffer(listedProperties[listingNum].sellingPrice, listedProperties[listingNum].ownedProperty);
+    bool sellerDecision = contactedSellers[listingNum]->respondOffer(price, listedProperties[listingNum].ownedProperty);
     listedProperties[listingNum].soldStatus = sellerDecision;
 }
 
