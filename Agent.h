@@ -7,11 +7,14 @@
 
 using namespace std;
 
+// listing of property struct
+
 struct listingDetails{
     Property* ownedProperty;
     double sellingPrice;
     string date;
     bool soldStatus;
+    double mostRecentOffer;
 };
 class Buyer;
 // mostly just changed declarations here
@@ -19,18 +22,20 @@ class Agent{
     private:
         Seller* contactedSellers[100];
         Buyer* contactedBuyers[100];
-        //list<listingDetails*> *listing;
         listingDetails listOfProperties;
         string name;
-        //adding the properties list inside agent since he controls the list i think
         listingDetails listedProperties[100];
         int count = 0;
     public:
+        //assigning buyers and sellers to a singular agent
         Agent(string name,  Seller* contactedSellers[],  Buyer* contactedBuyers[]);
+        //records the details of the list of properties
         void recordOffer(listingDetails listOfProperties);
+        // contacts seller for when buyer makes an offer
         void contactSeller(int listingNum, double price);
-        //pass a property in and can add to list, along with all listing details
+        // agent can modify a property listing
         void modifyListing(Property* p1, int sPrice, string date, bool status);
+        //prints list
         void printList();
 };
 

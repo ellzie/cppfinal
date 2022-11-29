@@ -24,6 +24,7 @@ void Agent::recordOffer(listingDetails tempList)
 
 void Agent::contactSeller(int listingNum, double price)
 { // the additions to the function allow the agent to choose which seller to contact about which house with the offer
+    listedProperties[listingNum].mostRecentOffer = price;
     bool sellerDecision = contactedSellers[listingNum]->respondOffer(price, listedProperties[listingNum].ownedProperty);
     listedProperties[listingNum].soldStatus = sellerDecision;
 }
@@ -34,6 +35,7 @@ void Agent::modifyListing(Property* p1, int sPrice, string date, bool status)
     listedProperties[count].sellingPrice = sPrice;
     listedProperties[count].date = date;
     listedProperties[count].soldStatus = status;
+    listedProperties[count].mostRecentOffer = 0;
     count = count + 1;
 }
 
@@ -45,6 +47,7 @@ void Agent::printList()
         cout << listedProperties[i].date << endl;
         string forSaleResult = listedProperties[i].soldStatus ? "Sold!" : "For Sale";
         cout << forSaleResult << endl;
+        cout << listedProperties[i].mostRecentOffer << endl;
         cout << endl;
     }
 }
